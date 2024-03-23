@@ -2,7 +2,6 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
-vim.g.mapleader = " "
 
 -- Movement in insert mode
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', {noremap = true})
@@ -28,6 +27,4 @@ vim.opt.rtp:prepend("~/.config/nvim/lua/custom-plugins/test")
 vim.cmd [[
   command! -nargs=0 Remind lua require('remind').execute()
 ]]
-vim.cmd [[
-  command! -nargs=0 ExecutePicker lua require('test').executePicker()
-]]
+
