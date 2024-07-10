@@ -8,6 +8,9 @@ local actions = require("telescope.actions")
 local conf = require("telescope.config").values
 
 local config = {
+	{ "nvim", "gcc", "Comment current line in Normal mode" },
+	{ "nvim", "[count]gcc", "Comment number of lines in Normal mode" },
+	{ "nvim", "gc", "Comment current line in Visual mode" },
 	{ "nvim", "C-h", "Move left in insert and command mode" },
 	{ "nvim", "C-j", "Move down in insert and command mode" },
 	{ "nvim", "C-k", "Move up in insert and command mode" },
@@ -36,6 +39,7 @@ local config = {
 	{ "tmux", "C-b x", "Kill current pane" },
 	{ "tmux", "C-b &", "Kill current window" },
 	{ "tmux", "C-b d", "Detach from tmux" },
+	{ "tmux", "C-b c", "Create New tmux window" },
 }
 
 local formatConfig = function(loadedConfig)
@@ -76,7 +80,7 @@ local commands = function(opts)
 				return true
 			end,
 			previewer = previewers.new_buffer_previewer({
-        title = "Command",
+				title = "Command",
 				define_preview = function(self, entry)
 					local output = f_config[entry.value]
 					vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, { output })
@@ -87,8 +91,18 @@ local commands = function(opts)
 		:find()
 end
 
+local function custom_cursor_theme(opts)
+	opts = opts or {}
+	return theme.get_cursor(vim.tbl_deep_extend("force", {
+		layout_config = {
+			results_width = 0.8,
+			preview_width = 0.2,
+		},
+	}, opts))
+end
+
 function M.execute()
-	commands(theme.get_ivy({}))
+	commands(custom_cursor_theme({}))
 end
 
 return M
