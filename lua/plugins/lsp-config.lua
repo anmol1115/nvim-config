@@ -55,7 +55,6 @@ return {
         end,
       })
 
-
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, {})
     end,

@@ -14,3 +14,6 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
 
 -- Escape in terminal Mode
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
+
+-- Show error message
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)

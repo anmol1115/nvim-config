@@ -23,7 +23,6 @@ return {
       }
     end
     )
-    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
   end
 }
