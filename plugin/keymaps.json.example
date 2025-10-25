@@ -1,0 +1,10 @@
+{
+    "SECTION_1": [
+	{"KEYMAP_1": "DESCRIPTION_1"},
+	{"KEYMAP_2": "DESCRIPTION_2"},
+    ],
+    "SECTION_2": [
+	{"KEYMAP_1": "DESCRIPTION_1"},
+	{"KEYMAP_2": "DESCRIPTION_2"},
+    ]
+}
