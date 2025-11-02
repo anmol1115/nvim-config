@@ -53,7 +53,8 @@ local function show_keymaps(opts)
   opts = themes.get_cursor(vim.tbl_deep_extend("force", {
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     layout_config = {
-      preview_width = 0.2
+      preview_width = 0.2,
+      height = 20,
     },
   }, opts))
 
