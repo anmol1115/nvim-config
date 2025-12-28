@@ -17,3 +17,6 @@ vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
 
 -- Show error message
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
+-- Go to definition
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
